@@ -60,7 +60,7 @@ namespace ArrowDamageCalc
         }
     }
 
-    class WeaponDamage
+    abstract class WeaponDamage
     {
 
         /// <summary>
@@ -123,11 +123,8 @@ namespace ArrowDamageCalc
             }
         }
 
-        protected virtual void CalculateDamage()
-        {
-            //sublass will override method
-            Console.WriteLine("specify weapon to type");
-        }
+        protected abstract void CalculateDamage();
+        
     }
 
     class ArrowDamage : WeaponDamage
@@ -143,7 +140,7 @@ namespace ArrowDamageCalc
         /// <param name="roll"> takes random integer dice roll as parameter </param>
         public ArrowDamage(int roll) : base(roll)
         {
-            Roll = roll;
+            
         }
 
        
@@ -172,7 +169,7 @@ namespace ArrowDamageCalc
         /// <param name="roll"> takes random integer dice roll as parameter </param>
         public SwordDamage(int roll) : base(roll)
         {
-            Roll = roll;
+            
         }
 
         protected override void CalculateDamage()
